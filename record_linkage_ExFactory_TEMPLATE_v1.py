@@ -1,6 +1,6 @@
 """
-This code demonstrates how to use RecordLink with two comma separated
-values (CSV) files. The task is to link similar accounts between the datasets.
+This code demonstrates how to use RecordLink a Dedupe.io Git of Deduplicatoin applications developed by the folks at DataMade
+Is uses two comma separated values (CSV) files and links similar accounts between the datasets.
 In this case, we are trying to map an internally maintained database of customer accounts to corresponding IDs present in a salesforce customer account database.
 The output will be a CSV with our linked results.
 
