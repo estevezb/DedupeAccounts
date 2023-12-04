@@ -17,12 +17,12 @@ import time # track time for waiting for file to save before reading back into a
 import pandas as pd # use to to work on data as dataframe
 
 # Base path where files are located , change this to point to the correct folder on your local machine:
-base_path = r"C:\Users\beste\OneDrive - Qral Group\12 Ops\20231115\02 Internal Controls"
+base_path = r"C:\Add\Path\Here"
 
 # New subdirectory within base_path
-output_subdirectory = "mastering"
+output_subdirectory = "Add subdirectory name here"
 # New subdirectory within base_path
-Procossed_input_subdirectory = "Processed_inputs"
+Procossed_input_subdirectory = "Add subdirectory name here"
 
 # use to help decode uncommon characters
 def detect_encoding(file_path):
@@ -128,10 +128,10 @@ def readData(filename, dropped_file=None):
             
             # Drop rows with blank values for specific fields (e.g., 'ShippingStreet')
             # Adjust this condition based on your specific requirements
-            if filename.endswith ('SFDC Accounts Extract 20231115_215700.csv') and not clean_row.get('ShippingStreet'):
+            if filename.endswith ('Add left file here') and not clean_row.get('Add any column here to check for blank values'):
                 continue
-            elif filename.endswith('Processed_ExFactory Customer Mastering records 20231117.csv'):
-                shipping_street = clean_row.get('ShippingStreet', '')
+            elif filename.endswith('Add right file here/'):
+                shipping_street = clean_row.get('Add  any or same column here as above to check for blank values', '')
                 if not clean_row.get('Name') or not any(char.isdigit() for char in shipping_street) or '?' in shipping_street:
                     if dropped_file:
                         writeDroppedRow(row, dropped_file)
@@ -161,31 +161,24 @@ if __name__ == '__main__':
             log_level = logging.DEBUG
     logging.getLogger().setLevel(log_level)
 
-    # ## Setup
+    ##=================================================Setup your input files and output files here
 
-    output_file = os.path.join(base_path,output_subdirectory,'Customer_mastering_output_20231117_ExFactory_Fuzzy_RESULT.csv') #Set File name Customer_mastering_output_20231103, #Set File name TradePartner_mastering_output_20231103
+    output_file = os.path.join(base_path,output_subdirectory,'Add the name of your output file') 
     settings_file = 'data_matching_learned_settings' #these files are stored in the same directory as the script, so the path does not need to be specified
-    training_file = 'data_matching_training_ExFactory_20231115.json'
+    training_file = 'data_matching_training.json' # this file is generated after the user has manually labeled the first set of records and saved the file
 
-    left_file = os.path.join(base_path, 'SFDC Accounts Extract 20231115_215700.csv') # Set path folder Internal Controls, e.g., C:\Users\beste\Qral Group\066.0001 Contract Operations Process Management - 12 Ops\20231103\02 Internal Controls
-    right_file = os.path.join(base_path, Procossed_input_subdirectory, 'Processed_ExFactory Customer Mastering records 20231117.csv') # Set path folder Internal Controls,
+    left_file = os.path.join(base_path, 'Add the name of your input "master" file') # This file is the master file that you want to match to the other file, contains the most complete data
+    right_file = os.path.join(base_path, Procossed_input_subdirectory, 'Add the name of your input "incomplete" or second dataset file') # This file is the second file that you want to match to the master file, contains incomplete data
     
     # Define the path for the file to store dropped rows
     dropped_rows_file = os.path.join(base_path, output_subdirectory, 'Customer_mastering_output_ExFactory - LOG unusable records_20231117.csv')
-    #Define the new colum names mapping
-    #column_rename_mapping_data_2 = {
-    #    'SHIP_TO_NAME' : 'Name',
-    #    'ADDRESS': 'ShippingStreet',
-    #    'CITY' : 'ShippingCity',
-    #    'STATE' : 'ShippingState',
-    #    'ZIPCODE' : 'ShippingPostalCode'
-    #}
+
     
     print('importing data ...')
     data_1 = readData(left_file) #SF Accounts  # No renaming needed for data_1
     data_2 = readData(right_file, dropped_rows_file) # Renaming for data_2 # Data pond customer mastering input with renamed columns to match SFDC column names
     
-    # New column renaming for the output file
+    # New column renaming for the output file. Change these column names as needed
     output_column_rename_mapping = {
         'ShippingStreet': 'Address',
         'ShippingCity': 'City',
@@ -193,7 +186,7 @@ if __name__ == '__main__':
         'ShippingPostalCode': 'Zip'
     }
 
-    ##==================================================== Training
+    ##================================================================== Training
 
     if os.path.exists(settings_file):
         print('reading from', settings_file)
@@ -221,7 +214,7 @@ if __name__ == '__main__':
                 linker.prepare_training(data_1,
                                         data_2,
                                         training_file=tf,
-                                        sample_size=150000)
+                                        sample_size=150000) # Default sample size is 10000, increase this if you have more data. Note time to train will increase with sample size
 
         else:
             linker.prepare_training(data_1, data_2, sample_size=150000)
