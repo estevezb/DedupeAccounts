@@ -1,8 +1,9 @@
 """
-This code demonstrates how to use RecordLink a Dedupe.io Git of Deduplicatoin applications developed by the folks at DataMade
-Is uses two comma separated values (CSV) files and links similar accounts between the datasets.
-In this case, we are trying to map an internally maintained database of customer accounts to corresponding IDs present in a salesforce customer account database.
-The output will be a CSV with our linked results.
+This code demonstrates how to use RecordLink a Dedupe.io Git of Deduplication applications developed by the folks at DataMade
+Is uses two comma separated values (CSV) files and links similar accounts between the datasets. 
+In this version, we are trying to map an internally maintained database of customer accounts to corresponding IDs present in a salesforce customer account database.
+There are 3 outputs from this script: one is the complete output file with all the columns from both input files, the second is a file with dropped records, and the third is a file with only the linked results.
+The linked result output file is paired horizontally, meaning that the columns from the two input files are merged into a single row.
 
 """
 import os
