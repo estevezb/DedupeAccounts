@@ -1,5 +1,5 @@
 ## These python programs are modified from the orginal programs developed by Forest Gregg, DataMade , Derek Eder, DataMade. The dedupe.io app GitHub : https://github.com/dedupeio/dedupe. Also, see here for examples: https://github.com/dedupeio/dedupe-examples.
-This repository modifies scripts for deduplication of duplicate accounts into clusters and record linkage of two datasets using csv_example.py and record_linkage_example.py, respectively.
+This repository modifies scripts for deduplication of duplicate records into clusters and record linkage of two datasets with similar records using the csv_example.py and record_linkage_example.py programs, respectively.
 
 ### Requirements
 1) Install Python 3.8.10  for dedupe app - have not tested other versions, most recent versions will likely not work
