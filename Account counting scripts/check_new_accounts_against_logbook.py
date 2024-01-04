@@ -281,14 +281,12 @@ new_accounts_df['Date_New_Accounts_Received'] = formatted_date
 print(f'There are {len(new_accounts_df)} new accounts in the {mastering_extract_filename} whose Q_ID does not exist in the {logbook_master_data_filename} on {current_time_suffix}')
 
 # Save the dataframe to a CSV file
-new_accounts_df.to_csv(os.path.join(input2_base_path, subdirectory, f'New accounts__{current_time_suffix}.csv'), index=False)
+new_accounts_df.to_csv(os.path.join(input2_base_path, subdirectory, f'P01a_New accounts__{current_time_suffix}.csv'), index=False)
 
 print('New accounts saved to CSV file')
 
 ##=================================== Save an updated logbook with new accounts appended to csv file for downstream processing ===============================================================================
 
-# check if the logbook_master_data is a DataFrame
-#print(type(logbook_master_data))
 
 #Add a new column to the DataFrame, this will track new accounts
 new_ExFactory_accounts['New_Account'] = True
@@ -307,6 +305,6 @@ logbook_master_data.insert(0, 'Record Number', range(1, 1+len(logbook_master_dat
 logbook_master_data = logbook_master_data.rename(columns={'ShipTo': 'Name'})
 
 # Save the DataFrame to a CSV file
-logbook_master_data.to_csv(os.path.join(input2_base_path, subdirectory, f'Processed_new_and_historical_acc__{current_time_suffix}.csv'), index=False)
+logbook_master_data.to_csv(os.path.join(input2_base_path, subdirectory, f'P01b_Processed_new_and_historical_acc__{current_time_suffix}.csv'), index=False)
 
 print(f'There are {len(logbook_master_data)} total records including New and historical accounts saved to CSV file')
