@@ -18,4 +18,5 @@ Note: (each script is prefixed with 'P0(value)_name_of_script_to_run.py', the nu
 #### Overview of program execution sequence going left to right: P01 (P01_check_new_accounts_against_logbook.py) --> P02 (P02_Dedupe_new_and_historical_accounts.py)--> P03 (P03_Assign_account_IDs_by_max_in_Logbook.py)--> P04 (P04_record_linkage_match_accounts.py) STOP! :stop_sign: 	:eyes: Before executing final script (P04b), manual analysis of P04 file output is needed to generate input for P04b (P04b_fuzzy_on_threshold_matches.py). 
 
 
-
+### Semi-Automated account processing: 
+#### To have the first 3 scripts automatically triggered, use watch_dog_TEMPLATE.py to monitor the incoming files. Modify accordingly to receive email updates as well.
