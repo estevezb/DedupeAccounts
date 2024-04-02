@@ -14,7 +14,12 @@ example: to install specific python version 3.8.10. Correct package for python 3
 ### Protocol for intake of new accounts, deduplication against historical accounts, new account ID assignment and fuzzy matching new accounts to a master dataset
 Note: (each script is prefixed with 'P0(value)_name_of_script_to_run.py', the number is the sequence in which the script should be executed i.e., P01 is first)
 
-#### Overview of program execution sequence going left to right: P01 (P01_check_new_accounts_against_logbook.py) --> P02 (P02_Dedupe_new_and_historical_accounts.py)--> P03 (P03_Assign_account_IDs_by_max_in_Logbook.py)--> P04 (P04_record_linkage_match_accounts.py) STOP! :stop_sign: 	:eyes: Before executing final script (P04b), manual analysis of P04 file output is needed to generate input for P04b (P04b_fuzzy_on_threshold_matches.py). 
+#### Overview of program execution sequence: 
+- P01 (P01_check_new_accounts_against_logbook.py)
+-  P02 (P02_Dedupe_new_and_historical_accounts.py)
+-  P03 (P03_Assign_account_IDs_by_max_in_Logbook.py)
+-  P04 (P04_record_linkage_match_accounts.py)
+-  STOP! :stop_sign: 	:eyes: Before executing final script (P04b), manual analysis of P04 file output is needed to generate input for P04b (P04b_fuzzy_on_threshold_matches.py). 
 
 
 ### Semi-Automated account processing: 
