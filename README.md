@@ -19,4 +19,11 @@ Note: (each script is prefixed with 'P0(value)_name_of_script_to_run.py', the nu
 
 
 ### Semi-Automated account processing: 
-#### To have the first 3 scripts automatically triggered, use watch_dog_TEMPLATE.py to monitor the incoming files. Modify accordingly to receive email updates as well.
+#### To have the first 3 scripts automatically triggered, do any of the following: 
+- a)use watch_dog_TEMPLATE.py script to monitor the incoming files on your local machine. Modify accordingly to receive email updates as well.
+- b)OR use subprocess to run the next script ( must import subprocess)
+      - e.g.,     # After the output file has been processed, trigger the follow-up script for analysis of threshold fuzzy matches
+          print("Triggering the final script,  P04b_fuzzy_on_threshold_matches.py...")
+          python_path = r"C:/Users/beste/envs/dedupe-examples/Scripts/python.exe"
+          script_path = r"C:\Users\beste\OneDrive - Qral Group\Desktop\python\FuzzyMatch\P04_Account fuzzy matching scripts\P04b_fuzzy_on_threshold_matches.py"
+          subprocess.run([python_path, script_path])
