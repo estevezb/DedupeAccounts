@@ -5,6 +5,9 @@ This repository modifies scripts for deduplication of duplicate records into clu
 1.) Install Python 3.8.10  for dedupe app - have not tested other versions, most recent versions will likely not work. To install specific python version 3.8.10. see here: https://www.python.org/downloads/release/python-3810/
 
 2.) Download and install dedupe app dependencies(click on the the requirements.txt file name, download and install globally to any scripts folder or install in a specific venv used only for this project)
+- example for installing requirements open the integrated terminal in Visual studio code (or your IDE) OR command prompt terminal then do the following :
+- a.) Navigate to the path where the requirements.txt is downloaded:   cd path_to_your_project
+- b.) Install requirements:                                            pip install -r requirements.txt
 
 3.) If using Visual Studio code (highly recommend), install IDE . https://code.visualstudio.com/download
 
