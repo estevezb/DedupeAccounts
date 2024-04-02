@@ -10,7 +10,7 @@ This repository modifies scripts for deduplication of duplicate records into clu
 -         cd path_to_your_project
 -         python -m venv dedupeapp_venv
 -         venv\Scripts\activate
--         install -r requirements.txt
+-         pip install -r requirements.txt
 
 3.) If using Visual Studio code (highly recommend), install IDE . https://code.visualstudio.com/download
 
