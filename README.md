@@ -6,8 +6,10 @@ This repository modifies scripts for deduplication of duplicate records into clu
 
 2.) Download and install dedupe app dependencies(click on the the requirements.txt file name, download and install globally to any scripts folder or install in a specific venv used only for this project)
 - example for installing requirements open the integrated terminal in Visual studio code (or your IDE) OR command prompt terminal then do the following :
--  Navigate to the path where the requirements.txt is downloaded, and then  install requirements:
+-  Navigate to the path where the requirements.txt is downloaded, create and activate the venv for your project and then install requirements:
 -         cd path_to_your_project
+-         python -m venv dedupeapp_venv
+-         venv\Scripts\activate
 -         install -r requirements.txt
 
 3.) If using Visual Studio code (highly recommend), install IDE . https://code.visualstudio.com/download
