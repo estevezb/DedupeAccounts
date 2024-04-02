@@ -2,9 +2,7 @@
 This repository modifies scripts for deduplication of duplicate records into clusters and record linkage of two datasets with similar records using the csv_example.py and record_linkage_example.py programs, respectively.
 
 ### Requirements
-1) Install Python 3.8.10  for dedupe app - have not tested other versions, most recent versions will likely not work
-   
-example: to install specific python version 3.8.10. Correct package for python 3.8.10 is here: https://www.python.org/downloads/release/python-3810/
+1) Install Python 3.8.10  for dedupe app - have not tested other versions, most recent versions will likely not work. To install specific python version 3.8.10. see here: https://www.python.org/downloads/release/python-3810/
 
 2.) Download and install dedupe app dependencies(click on the the requirements.txt file name, download and install globally to any scripts folder or install in a specific venv used only for this project)
 
