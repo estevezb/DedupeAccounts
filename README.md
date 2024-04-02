@@ -12,8 +12,8 @@ This repository modifies scripts for deduplication of duplicate records into clu
 -         venv\Scripts\activate
 -         pip install -r requirements.txt
 you should now be able to run the python scripts from this environment: 
-     ```
      
+     #example
      python P04_record_linkage_match_accounts_UPDATE_OPS.py
 
   
