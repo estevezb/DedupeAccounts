@@ -11,7 +11,7 @@ This repository modifies scripts for deduplication of duplicate records into clu
 -         python -m venv dedupeapp_venv
 -         venv\Scripts\activate
 -         pip install -r requirements.txt
-
+* you should now be able to run the python scripts from this environment python P04_record_linkage_match_accounts_UPDATE_OPS.py
 3.) If using Visual Studio code (highly recommend), install IDE . https://code.visualstudio.com/download
 
 
