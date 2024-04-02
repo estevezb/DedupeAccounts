@@ -4,15 +4,14 @@ This repository modifies scripts for deduplication of duplicate records into clu
 ### Requirements
 1) Install Python 3.8.10  for dedupe app - have not tested other versions, most recent versions will likely not work
    
-example: to install specific python version 3.8.10. Correct package for python 3.8.10 is here: https://pypi.org/project/PyLBFGS/0.2.0.13/#files ;
-PyLBFGS-0.2.0.13-cp38-cp38-win_amd64.whl
+example: to install specific python version 3.8.10. Correct package for python 3.8.10 is here: https://www.python.org/downloads/release/python-3810/
 
 2.) Install the requirements.txt for dedupe app dependencies
 
-3.) If using Visual Studio code, install IDE . https://code.visualstudio.com/download
+3.) If using Visual Studio code (highly recommend), install IDE . https://code.visualstudio.com/download
 
 
-### Protocol 
+### Protocol for intake of new accounts, deduplication against historical accounts, new account ID assignment and fuzzy matching new accounts to a master dataset
 Note: (each script is prefixed with 'P0(value)_name_of_script_to_run.py', the number is the sequence in which the script should be executed i.e., P01 is first)
 
 #### Overview of program execution sequence going left to right: P01 (P01_check_new_accounts_against_logbook.py) --> P02 (P02_Dedupe_new_and_historical_accounts.py)--> P03 (P03_Assign_account_IDs_by_max_in_Logbook.py)--> P04 (P04_record_linkage_match_accounts.py) STOP! :stop_sign: 	:eyes: Before executing final script (P04b), manual analysis of P04 file output is needed to generate input for P04b (P04b_fuzzy_on_threshold_matches.py). 
